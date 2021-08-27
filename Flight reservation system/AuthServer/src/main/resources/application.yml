@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: flightreservation
+  datasource:
+    url: jdbc:mysql://localhost:3306/useraccess
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximumPoolSize: 10
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+logging:
+  file:
+    name: /Coding/Logging/${spring.application.name}/log
+    server:
+      port: 8080
+    #            password: cs572
+
+jwt.secret.key: minte
+jwt.expiration.time: 1000000

@@ -1,0 +1,38 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: flight-reservation-auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/useraccess
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximumPoolSize: 10
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+logging:
+  file:
+    name: /Coding/Logging/${spring.application.name}/log
+
+    #            password: cs572
+
+jwt.secret.key: password
+jwt.expiration.time: 9000000
+spring-boot-server.name: flight-reservation-main
+
+
+springdoc:
+  api-docs:
+    path: /api-docs
+
+
